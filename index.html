@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>Calculator</title>
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="calculator">
+          <div class="top">
+            <span id="cancel"onclick="document.querySelector('#output').innerText = '' ">C</span>
+            <span id="output" class="output"></span>
+          </div>
+          <div class="bottom">
+              <span class="num" onclick="document.querySelector('#output').innerText += '7' ">7</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '8' ">8</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '9' ">9</span>
+              <span class="operator"onclick="document.querySelector('#output').innerText += '+' ">+</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '4' ">4</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '5' ">5</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '6' ">6</span>
+              <span class="operator"onclick="document.querySelector('#output').innerText += '-' ">-</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '1' ">1</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '2' ">2</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '3' ">3</span>
+              <span class="operator"onclick="document.querySelector('#output').innerText += '*' ">*</span>
+              <span id="period"onclick="document.querySelector('#output').innerText += '.' ">.</span>
+              <span class="num"onclick="document.querySelector('#output').innerText += '0' ">0</span>
+              <span class="operator"onclick="document.querySelector('#output').innerText = eval(document.querySelector('#output').innerText) ">=</span>
+              <span class="operator"onclick="document.querySelector('#output').innerText += '/' ">/</span>
+          </div>
+        </div>
+        <script>
+          document.addEventListener("keyup", function(b){
+            console.log(b.key, b.keyCode)
+          if(b.keyCode >=48 && b.keyCode<=57){
+              console.log(b.key, b.keyCode)
+              document.querySelector("#output").innerText += b.key;
+            }
+          
+          if(keyCode === 187 || b.keyCode === 13){
+            document.querySelector("#output").innerText = eval(document.querySelector("#output").innerText)
+          }
+          })
+        </script>
+    </body>
+</html>
